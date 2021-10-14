@@ -1,0 +1,36 @@
+Alunas:
+	hrsde16 - Helena Regina Salomé D'Espindula - GRR20161445
+	lk16 - Louise Knauber - GRR20161471
+
+Execução:
+	$ ./programa < entrada.txt > saida.txt
+
+Observações:
+	- Implementada a primeira e a segunda parte do trabalho (operações +, -, *, =, /, < e >);
+	- A estrutura de dados utilizada no trabalho foi uma lista duplamente encadeada com sentinela. Essa estrutura foi escolhida por ser mais maleável para inserir/remover elementos da lista. Todos os nós foram alocados dinamicamente;
+	- Cada nó da lista é uma struct com o num_elementos, o conjunto e dois ponteiros para os outros nós;
+	- Quando a operação chamada é "+", o programa utiliza a busca realizada anteriormente que retorna um ponteiro correto para inserir o conjunto na lista ordenada. Essa inserção é feita antes do ponteiro de t_conjunto que a função "procura_conjunto" retornou.
+	- O programa utiliza um índice para facilitar a busca de conjuntos, o indice é um vetor de ponteiros do tipo t_conjunto (t_conjunto * * ppindice) que aponta para o primeiro nó de cada num_elementos;
+	- A função "procura_conjunto" modifica a variavel achou para "s" (se foi encontrado) ou  "n" (se não foi encontrado) e retorna o ponteiro para o conjunto buscado (se foi encontrado) ou o o conjunto seguinte (se não for encontrado);
+	- Quando a operação chamada é "-", remove o nó da lista, desaloca a memória utilizada por esse nó e ajusta os índices.
+	- As operações ">" e "/" comparam o conjunto fornecido na entrada com os demais conjuntos da lista a partir do primeiro conjunto com um itens a mais do que o conjunto de entrada (utilizando o indice) respectivamente imprimindo e removendo os superconjuntos;
+	- A operação "<" comparam o conjunto fornecido na entrada com os demais conjuntos da lista a partir do seguinte ao sentinela imprimindo os subconjuntos;
+
+Erros:
+	- O programa compila sem erros ou warnings;
+	- Não apresentou erros sobre as condições testas.
+
+Dificuldades:
+	- Não houveram maiores dificuldades pois desde a primeira entrega o programa já foi pensado para a inclusão das operações da segunda parte;
+
+
+Tempos (obtidos com o "$time ./programa < exemplos"):
+	Exemplo						Tempo
+	entrada_exemplo_simples.txt		real 0m0.028s / user 0m0.000s / sys 0m0.004s
+	entrada_1k.txt					real 0m1.217s / user 0m1.024s / sys 0m0.048s
+	entrada_2k.txt					real 0m3.973s / user 0m3.312s / sys 0m0.072s
+	entrada_4k.txt					real 0m17.541s / user 0m14.128s / sys 0m0.256s
+	entrada_8k.txt					real 0m57.061s / user 0m51.460s / sys 0m1.180s
+
+
+
